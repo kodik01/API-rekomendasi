@@ -21,7 +21,7 @@ jurnal["clean_title"] = jurnal["title"].apply(clean_title)
 jurnal["clean_abstract"] = jurnal["abstract"].apply(clean_abstract)
 jurnal["combined"] = jurnal["clean_title"] + " " + jurnal["clean_abstract"]
 
-vectorizer = TfidfVectorizer(stop_words='english')
+vectorizer = TfidfVectorizer()
 tfidf_matrix = vectorizer.fit_transform(jurnal["combined"])
 
 cosine_sim_matrix = cosine_similarity(tfidf_matrix)
